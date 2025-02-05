@@ -1,3 +1,11 @@
 public class Tablero {
-    char[][] casillas = new char [6][7];
+    private int filas = 7;
+    private int columnas = 6;
+    public char[][] tablero;
+
+    public Tablero (int filas, int columnas){
+        tablero = new char [filas][columnas];
+    }
+
+
 }
