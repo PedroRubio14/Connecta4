@@ -7,11 +7,11 @@ public class Juego {
         Juego j = new Juego();
         Jugador O = nombreJugadorO();
         Jugador X = nombreJugadorX();
-        while (!laPartidaHaTerminado(esGanador(),empate(tablero))){
+        while (!laPartidaHaTerminado(tablero,O,X)){
             tablero.mostrarTablero();
             ponerFicha(O,tablero);
             tablero.mostrarTablero();
-            if (laPartidaHaTerminado(esGanador(),empate(tablero))){
+            if (laPartidaHaTerminado(tablero,O,X)){
                 break;
             }
             ponerFicha(X,tablero);
@@ -42,20 +42,28 @@ public class Juego {
         f.colocarFicha(columna,jugador,tablero);
     }
 
-    private boolean laPartidaHaTerminado (boolean esGanador, boolean empate){
-        if ( esGanador || empate){
-            return true;
-        }
-        return false;
+    private boolean laPartidaHaTerminado (Tablero t,Jugador jo,Jugador jx){
+        return esGanador(t, jo, jx) || empate(t, jo, jx);
     }
 
-    private boolean esGanador (){
-        return false;
-    }
-
-    private boolean empate (Tablero t){
+    private boolean esGanador (Tablero t,Jugador jo,Jugador jx){
         char [][] tablero = t.getTablero();
-        if(!esGanador()) {
+
+        return ganaX(tablero,jx) || ganaO(tablero,jo);
+    }
+
+    private boolean ganaX (char [][] t,Jugador j){
+        System.out.println("HA GANADO "+j.getNombre());
+        return false;
+    }
+    private boolean ganaO(char [][] t, Jugador j){
+        return false;
+
+    }
+
+    private boolean empate (Tablero t,Jugador jo,Jugador jx){
+        char [][] tablero = t.getTablero();
+        if(!esGanador(t, jo, jx)) {
             for (int i = 0; i < tablero.length; i++) {
                 for (int y = 0; y < tablero[i].length; y++) {
                     if (tablero[i][y] == 0) {
