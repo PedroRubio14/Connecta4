@@ -25,7 +25,7 @@ public class Tablero {
         return tablero;
     }
 
-    public void setTablero(char[][] tablero) {
-        this.tablero = tablero;
+    public void setTablero(Tablero tablero) {
+        this.tablero = tablero.getTablero();
     }
 }

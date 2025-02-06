@@ -3,6 +3,7 @@ public class Ficha {
 
     public void colocarFicha (int columna,Jugador jugador,Tablero tablero){
     tablero.getTablero()[encontrarFilaDisponible(columna,tablero)][columna] = jugador.getMiFicha();
+    tablero.setTablero(tablero);
 
     }
 
