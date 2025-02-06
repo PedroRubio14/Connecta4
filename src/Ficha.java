@@ -1,7 +1,7 @@
 public class Ficha {
 
-    public void colocarFicha (int columna, Jugador jugador,Tablero tablero){
-
+    public void colocarFicha (int columna, Jugador jugador,char [][] tablero){
+    tablero[enonctrarFilaDisponible(columna,tablero)][columna] = jugador.();
 
     }
 
@@ -12,6 +12,6 @@ public class Ficha {
             }
 
         }
-
+        return -1;
     }
 }
