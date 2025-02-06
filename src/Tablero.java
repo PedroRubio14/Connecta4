@@ -8,7 +8,11 @@ public class Tablero {
     public void mostrarTablero() {
         for (int i = 0; i < tablero.length; i++) {
             for (int y = 0; y < tablero[i].length; y++) {
-                System.out.print("[" + tablero[i][y] + "]");
+                if(tablero[i][y]==0){
+                    System.out.print("[ ]");
+                }else {
+                    System.out.print("[" + tablero[i][y] + "]");
+                }
             }
             System.out.println();
         }
