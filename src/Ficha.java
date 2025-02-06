@@ -1,13 +1,13 @@
 public class Ficha {
 
-    public void colocarFicha (int columna, Jugador jugador,char [][] tablero){
-    tablero[enonctrarFilaDisponible(columna,tablero)][columna] = jugador.();
+    public void colocarFicha (int columna, Jugador jugador,Tablero tablero){
+    tablero.getTablero()[encontrarFilaDisponible(columna,tablero)][columna] = 'x';//aun no terminado, hay que implementar jugador
 
     }
 
-    private int enonctrarFilaDisponible (int columna, char [][] tablero){
-        for(int i = tablero.length-1;i>0;i--){
-            if(tablero[i][columna]==0){
+    private int encontrarFilaDisponible (int columna, Tablero tablero){
+        for(int i = tablero.getTablero().length-1;i>0;i--){
+            if(tablero.getTablero()[i][columna]==0){
                 return i;
             }
 

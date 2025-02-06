@@ -18,7 +18,11 @@ public class Tablero {
         }
     }
 
+    public char[][] getTablero() {
+        return tablero;
+    }
 
-
-
+    public void setTablero(char[][] tablero) {
+        this.tablero = tablero;
+    }
 }
