@@ -67,7 +67,7 @@ public class Juego {
 
 
     private boolean ganaX (char [][] t,Jugador j){
-        if(filaGanadora(j.getMiFicha()) ||columnaGanadora (j.getMiFicha()) || ganadorDiagonal(j.getMiFicha()) ){
+        if(filaGanadora(j.getMiFicha(),t) ||columnaGanadora (j.getMiFicha(),t) || ganadorDiagonal(j.getMiFicha(),t) ){
             System.out.println("HA GANADO "+j.getNombre()+"!!");
 
             return true;
@@ -111,32 +111,30 @@ public class Juego {
     }
 
     private boolean filaGanadora(char ficha, char [][] t){
-            for (int i = 0; i < t.length; i++) {
-                int contador = 0;
-                for (int j = 0; j < t[i].length; j++) {
-                        contador++;
-                        if (contador == 4) {
-                            return true;
-                        } else {
-                        contador = 0;
-                    }
+        for(int i =0; i < t.length; i++){
+            int contador = 0;
+            for (int y = 0; y < t[i].length; y++){
+                if (t[i][y] == ficha) {
+                    contador++;
                 }
+                if (contador == 4){
+                    return true;
+                }else {
+                    contador = 0;
+                }
+
             }
-            return false;
-
-
-
+        }
+        return false;
     }
+
     private boolean columnaGanadora(char ficha, char [][] t){
-        return false;
+    return false;
 
-    }
-    private boolean ganadorDiagonal(char ficha, char [][] t){
-        return false;
+}
+private boolean ganadorDiagonal(char ficha, char [][] t){
+    return false;
 
-    }
-
-
-
+}
 
 }
