@@ -111,7 +111,6 @@ public class Juego {
     }
 
     private boolean filaGanadora(char ficha, char [][] t){
-        private boolean filaGanadora(char ficha, char[][] t) {
             for (int i = 0; i < t.length; i++) {
                 int contador = 0;
                 for (int j = 0; j < t[i].length; j++) {
@@ -124,7 +123,7 @@ public class Juego {
                 }
             }
             return false;
-        }
+
 
 
     }
