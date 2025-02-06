@@ -1,7 +1,7 @@
 public class Ficha {
 
-    public void colocarFicha (int columna, Jugador jugador,Tablero tablero){
-    tablero.getTablero()[encontrarFilaDisponible(columna,tablero)][columna] = 'x';//aun no terminado, hay que implementar jugador
+    public void colocarFicha (int columna,char x /*Jugador jugador*/,Tablero tablero){
+    tablero.getTablero()[encontrarFilaDisponible(columna,tablero)][columna] = x;//aun no terminado, hay que implementar jugador
 
     }
 
