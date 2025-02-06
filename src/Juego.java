@@ -4,8 +4,20 @@ public class Juego {
     Scanner sc = new Scanner(System.in);
 
     public void partida(Tablero tablero){
-        while (laPartidaHaTerminado())
         Juego j = new Juego();
+        Jugador O = nombreJugadorO();
+        Jugador X = nombreJugadorX();
+        while (!laPartidaHaTerminado(esGanador(),empate())){
+            tablero.mostrarTablero();
+            ponerFicha(O,tablero);
+            tablero.mostrarTablero();
+            if (laFichaEraGanadora()){
+                break;
+            }
+            ponerFicha(X,tablero);
+            tablero.mostrarTablero();
+        }
+
 
     }
 
@@ -45,6 +57,10 @@ public class Juego {
     }
 
     private boolean empate (){
+        return false;
+    }
+
+    private boolean laFichaEraGanadora(){
         return false;
     }
 
