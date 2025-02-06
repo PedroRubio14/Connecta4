@@ -7,24 +7,21 @@ public class Juego {
         Juego j = new Juego();
         Jugador O = nombreJugadorO();
         Jugador X = nombreJugadorX();
-        while (!laPartidaHaTerminado(esGanador(),empate())){
+        while (!laPartidaHaTerminado(esGanador(),empate(tablero))){
             tablero.mostrarTablero();
             ponerFicha(O,tablero);
             tablero.mostrarTablero();
-            if (laFichaEraGanadora()){
+            if (laPartidaHaTerminado(esGanador(),empate(tablero))){
                 break;
             }
             ponerFicha(X,tablero);
             tablero.mostrarTablero();
         }
-
+        System.out.print("La partida ha finalizado");
 
     }
 
     public Jugador nombreJugadorO (){
-        System.out.println("Nombre del Jugador X: ");
-        String nombreX = sc.nextLine();
-        Jugador jugadorX = new Jugador(nombreX,'X');
         System.out.println("Nombre del Jugador O: ");
         String nombreO = sc.nextLine();
         Jugador jugadorO = new Jugador(nombreO,'O');
@@ -56,12 +53,21 @@ public class Juego {
         return false;
     }
 
-    private boolean empate (){
-        return false;
+    private boolean empate (Tablero t){
+        char [][] tablero = t.getTablero();
+        if(!esGanador()) {
+            for (int i = 0; i < tablero.length; i++) {
+                for (int y = 0; y < tablero[i].length; y++) {
+                    if (tablero[i][y] == 0) {
+                        return false;
+                    }
+                }
+            }
+            System.out.println("EMPATE!!");
+            return true;
+        }
     }
 
-    private boolean laFichaEraGanadora(){
-        return false;
-    }
+
 
 }
