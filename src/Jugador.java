@@ -5,8 +5,7 @@ public class Jugador {
 
 
 
-    Jugador jugadorX = new Jugador("Pedro",'X');
-    Jugador jugadorO = new Jugador("Pau",'O');
+
 
     public Jugador(String nombre,char miFicha) {
         this.nombre = nombre;
