@@ -49,17 +49,28 @@ public class Juego {
     private boolean esGanador (Tablero t,Jugador jo,Jugador jx){
         char [][] tablero = t.getTablero();
 
+
         return ganaX(tablero,jx) || ganaO(tablero,jo);
     }
 
     private boolean ganaX (char [][] t,Jugador j){
-        System.out.println("HA GANADO "+j.getNombre());
+        if(filaGanadora('X') ||columnaGanadora ('X') || ganadorDiagonal('X') ){
+            System.out.println("HA GANADO "+j.getNombre()+"!!");
+            return true;
+        }
+
         return false;
     }
     private boolean ganaO(char [][] t, Jugador j){
+        if(filaGanadora('O') ||columnaGanadora ('O') || ganadorDiagonal('O') ){
+            System.out.println("HA GANADO "+j.getNombre()+"!!");
+            return true;
+        }
         return false;
 
     }
+
+
 
     private boolean empate (Tablero t,Jugador jo,Jugador jx){
         char [][] tablero = t.getTablero();
@@ -76,6 +87,17 @@ public class Juego {
         }
         return false;
     }
+
+    private boolean filaGanadora(char ficha){
+
+    }
+    private boolean columnaGanadora(char ficha){
+
+    }
+    private boolean ganadorDiagonal(char ficha){
+
+    }
+
 
 
 
