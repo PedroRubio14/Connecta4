@@ -8,8 +8,10 @@ public class Juego {
         Jugador O = nombreJugadorO();
         Jugador X = nombreJugadorX();
 
+
+        tablero.mostrarTablero();
+
         while (!laPartidaHaTerminado(tablero,O,X)){
-            tablero.mostrarTablero();
             ponerFicha(O,tablero);
             tablero.mostrarTablero();
 
@@ -46,11 +48,24 @@ public class Juego {
 
 
     private void ponerFicha (Jugador jugador,Tablero tablero){
-        System.out.println("Donde quieres colocar tu ficha "+jugador.getNombre()+" ?");
-        int columna = sc.nextInt();
 
-        Ficha f = new Ficha();
-        f.colocarFicha(columna,jugador,tablero);
+        boolean fichaPuesta = false;
+        int columna;
+
+        do {
+            System.out.println("Donde quieres colocar tu ficha "+jugador.getNombre()+" ?");
+            columna = sc.nextInt();
+            sc.nextLine();
+            if (columna < 0 || columna >= tablero.getTablero()[0].length){
+                System.out.println("Error: La columna no es válida. Elige una entre 0 y " + (tablero.getTablero()[0].length - 1));
+
+            }else {
+                Ficha f = new Ficha();
+                f.colocarFicha(columna, jugador, tablero);
+                fichaPuesta = true;
+            }
+        }while (!fichaPuesta);
+
     }
 
 
