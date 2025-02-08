@@ -16,6 +16,7 @@ public class Ficha {
         }catch(IndexOutOfBoundsException e){
             System.out.println("Error: La columna no es válida. Elige una entre 0 y " + (tablero.getTablero()[0].length - 1));
 
+
         }
 
     }
