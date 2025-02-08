@@ -6,6 +6,7 @@ public class Ficha {
             int fila = encontrarFilaDisponible(columna, tablero);
             if (fila == -1){
                 System.out.print("ESTA COLUMNA ESTA LLEANA");
+                System.out.println();
 
             }
             else {
