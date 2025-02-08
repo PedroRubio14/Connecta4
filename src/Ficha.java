@@ -2,8 +2,21 @@
 public class Ficha {
 
     public void colocarFicha (int columna,Jugador jugador,Tablero tablero){
-    tablero.getTablero()[encontrarFilaDisponible(columna,tablero)][columna] = jugador.getMiFicha();
-    tablero.setTablero(tablero);
+        try {
+            int fila = encontrarFilaDisponible(columna, tablero);
+            if (fila == -1){
+                System.out.print("ESTA COLUMNA ESTA LLEANA");
+
+            }
+            else {
+                tablero.getTablero()[fila][columna] = jugador.getMiFicha();
+                tablero.setTablero(tablero);
+            }
+
+        }catch(IndexOutOfBoundsException e){
+            System.out.println("Error: La columna no es válida. Elige una entre 0 y " + (tablero.getTablero()[0].length - 1));
+
+        }
 
     }
 
