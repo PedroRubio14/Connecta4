@@ -122,10 +122,18 @@ public class Juego {
     }
 
     private boolean columnaGanadora(char ficha, char [][] t){
+        for(int i = 0; i<t[0].length;i++){
+            for(int y =0; y<t.length-3;y++){
+                if(t[y][i]==ficha&&t[y+1][i]==ficha&&t[y+2][i]==ficha&&t[y+3][i]==ficha){
+                    return true;
+                }
+
+            }
+        }
 
     return false;
 
-}
+    }
 private boolean ganadorDiagonal(char ficha, char [][] t){
     return false;
 
