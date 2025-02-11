@@ -22,8 +22,6 @@ public class Jugador {
 
 
 
-
-
     public Jugador(String nombre,char miFicha) {
         this.nombre = nombre;
         this.miFicha = miFicha;
