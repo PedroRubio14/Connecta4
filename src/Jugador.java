@@ -1,6 +1,6 @@
 public class Jugador {
     private String nombre;
-    private char miFicha;
+    private final char miFicha;
 
 
 

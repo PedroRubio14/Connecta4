@@ -57,12 +57,7 @@ public class Juego {
 
             }else {
                 Ficha f = new Ficha();
-                if(!f.colocarFicha(columna, jugador, tablero)){
-                    fichaPuesta = false;
-                }
-                else {
-                    fichaPuesta = true;
-                }
+                fichaPuesta = f.colocarFicha(columna, jugador, tablero);
 
 
             }
