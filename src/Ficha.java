@@ -4,7 +4,7 @@ public class Ficha {
     public boolean colocarFicha (int columna,Jugador jugador,Tablero tablero){
         int fila = encontrarFilaDisponible(columna, tablero);
         if (fila == -1){
-            System.out.print("ESTA COLUMNA ESTA LLEANA");
+            System.out.print("ESTA COLUMNA ESTA LLENA");
             System.out.println();
             return false;
         }
