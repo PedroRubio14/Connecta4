@@ -1,18 +1,18 @@
 
 public class Ficha {
 
-    public void colocarFicha (int columna,Jugador jugador,Tablero tablero){
+    public boolean colocarFicha (int columna,Jugador jugador,Tablero tablero){
         int fila = encontrarFilaDisponible(columna, tablero);
         if (fila == -1){
             System.out.print("ESTA COLUMNA ESTA LLEANA");
             System.out.println();
-
+            return false;
         }
         else {
             tablero.getTablero()[fila][columna] = jugador.getMiFicha();
             tablero.setTablero(tablero);
         }
-
+        return true;
 
     }
 
@@ -25,4 +25,6 @@ public class Ficha {
         }
         return -1;
     }
+
+
 }
