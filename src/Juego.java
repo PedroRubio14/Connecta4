@@ -30,9 +30,7 @@ public class Juego {
         System.out.println("Nombre del Jugador O: ");
         String nombreO = sc.nextLine();
 
-        Jugador jugadorO = new Jugador(nombreO,'O');
-
-        return jugadorO;
+        return new Jugador(nombreO,'O');
     }
 
 
@@ -40,9 +38,7 @@ public class Juego {
         System.out.println("Nombre del Jugador X: ");
         String nombreX = sc.nextLine();
 
-        Jugador jugadorX = new Jugador(nombreX, 'X');
-
-        return jugadorX;
+        return new Jugador(nombreX,'X');
     }
 
 

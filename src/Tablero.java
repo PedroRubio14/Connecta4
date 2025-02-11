@@ -16,7 +16,9 @@ public class Tablero {
             }
             System.out.println();
         }
-        System.out.println(" 0  1  2  3  4  5  6");
+        for(int i = 0;i<tablero[0].length;i++){
+            System.out.print(" "+i+" ");
+        }
         System.out.println();
         System.out.println();
     }
