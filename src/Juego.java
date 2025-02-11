@@ -5,63 +5,24 @@ public class Juego {
 
     public void partida(Tablero tablero){
         Juego j = new Juego();
-        Jugador O = nombreJugadorO();
-        Jugador X = nombreJugadorX();
+        Jugador O = Jugador.nombreJugadorO();
+        Jugador X = Jugador.nombreJugadorX();
 
 
         tablero.mostrarTablero();
 
         while (!laPartidaHaTerminado(tablero,O,X)){
-            ponerFicha(O,tablero);
+            Ficha.colocarFicha(O,tablero);
             tablero.mostrarTablero();
 
             if (laPartidaHaTerminado(tablero,O,X)){
                 break;
             }
 
-            ponerFicha(X,tablero);
+            Ficha.colocarFicha(X,tablero);
             tablero.mostrarTablero();
         }
         System.out.print("La partida ha finalizado");
-
-    }
-
-    public Jugador nombreJugadorO (){
-        System.out.println("Nombre del Jugador O: ");
-        String nombreO = sc.nextLine();
-
-        return new Jugador(nombreO,'O');
-    }
-
-
-    public Jugador nombreJugadorX () {
-        System.out.println("Nombre del Jugador X: ");
-        String nombreX = sc.nextLine();
-
-        return new Jugador(nombreX,'X');
-    }
-
-
-
-    private void ponerFicha (Jugador jugador,Tablero tablero){
-
-        boolean fichaPuesta = false;
-        int columna;
-
-        do {
-            System.out.println("Donde quieres colocar tu ficha "+jugador.getNombre()+" ?");
-            columna = sc.nextInt();
-            sc.nextLine();
-            if (columna < 0 || columna >= tablero.getTablero()[0].length){
-                System.out.println("Error: La columna no es válida. Elige una entre 0 y " + (tablero.getTablero()[0].length - 1));
-
-            }else {
-                Ficha f = new Ficha();
-                fichaPuesta = f.colocarFicha(columna, jugador, tablero);
-
-
-            }
-        }while (!fichaPuesta);
 
     }
 

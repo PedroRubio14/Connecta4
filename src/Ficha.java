@@ -1,22 +1,43 @@
-
+import java. util. Scanner;
 public class Ficha {
+    static Scanner sc = new Scanner(System.in);
 
-    public boolean colocarFicha (int columna,Jugador jugador,Tablero tablero){
-        int fila = encontrarFilaDisponible(columna, tablero);
-        if (fila == -1){
-            System.out.print("ESTA COLUMNA ESTA LLENA");
-            System.out.println();
-            return false;
-        }
-        else {
-            tablero.getTablero()[fila][columna] = jugador.getMiFicha();
-            tablero.setTablero(tablero);
-        }
-        return true;
+    public static void colocarFicha(Jugador jugador, Tablero tablero){
+
+        boolean fichaPuesta = false;
+        int columna;
+
+        do {
+            System.out.println("Donde quieres colocar tu ficha "+jugador.getNombre()+" ?");
+            columna = sc.nextInt();
+            sc.nextLine();
+            if (columna < 0 || columna >= tablero.getTablero()[0].length){
+                System.out.println("Error: La columna no es válida. Elige una entre 0 y " + (tablero.getTablero()[0].length - 1));
+
+            }else {
+                Ficha f = new Ficha();
+
+                int fila = encontrarFilaDisponible(columna, tablero);
+                if (fila == -1){
+                    System.out.print("ESTA COLUMNA ESTA LLENA");
+                    System.out.println();
+                }
+                else {
+                    tablero.getTablero()[fila][columna] = jugador.getMiFicha();
+                    tablero.setTablero(tablero);
+                    fichaPuesta = true;
+                }
+
+
+
+            }
+        }while (!fichaPuesta);
+
+
 
     }
 
-    private int encontrarFilaDisponible (int columna, Tablero tablero){
+    private static int encontrarFilaDisponible(int columna, Tablero tablero){
         for(int i = tablero.getTablero().length-1;i>=0;i--){
             if(tablero.getTablero()[i][columna]==0){
                 return i;
