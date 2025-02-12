@@ -1,7 +1,4 @@
-import java. util. Scanner;
-
 public class Juego {
-    Scanner sc = new Scanner(System.in);
 
     public void partida(Tablero tablero){
         Juego j = new Juego();
@@ -22,7 +19,7 @@ public class Juego {
             Ficha.colocarFicha(X,tablero);
             tablero.mostrarTablero();
         }
-        System.out.print("La partida ha finalizado");
+        Textos.imprimir("partida_finalizada");
 
     }
 
@@ -41,7 +38,7 @@ public class Juego {
 
     private boolean ganaX (char [][] t,Jugador j){
         if(filaGanadora(j.getMiFicha(),t) ||columnaGanadora (j.getMiFicha(),t) || ganadorDiagonal(j.getMiFicha(),t) ){
-            System.out.println("HA GANADO "+j.getNombre()+"!!");
+            Textos.imprimir("gana");
 
             return true;
         }
@@ -52,7 +49,7 @@ public class Juego {
 
     private boolean ganaO(char [][] t, Jugador j){
         if(filaGanadora(j.getMiFicha(),t) ||columnaGanadora (j.getMiFicha(),t) || ganadorDiagonal(j.getMiFicha(),t) ){
-            System.out.println("HA GANADO "+j.getNombre()+"!!");
+            Textos.imprimir("gana");
 
             return true;
         }

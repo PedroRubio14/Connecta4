@@ -1,6 +1,4 @@
-import java. util. Scanner;
 public class Ficha {
-    static Scanner sc = new Scanner(System.in);
 
     public static void colocarFicha(Jugador jugador, Tablero tablero){
 
@@ -9,8 +7,7 @@ public class Ficha {
 
         do {
             System.out.println("Donde quieres colocar tu ficha "+jugador.getNombre()+" ?");
-            columna = sc.nextInt();
-            sc.nextLine();
+            columna = Textos.llegirInt();
             if (columna < 0 || columna >= tablero.getTablero()[0].length){
                 System.out.println("Error: La columna no es válida. Elige una entre 0 y " + (tablero.getTablero()[0].length - 1));
 

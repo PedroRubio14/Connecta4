@@ -1,21 +1,18 @@
-import java. util. Scanner;
-
 public class Jugador {
-    static Scanner sc = new Scanner(System.in);
     private String nombre;
     private final char miFicha;
 
 
     public static Jugador nombreJugadorO(){
         System.out.println("Nombre del Jugador O: ");
-        String nombreO = sc.nextLine();
+        String nombreO = Textos.llegirString();
 
         return new Jugador(nombreO,'O');
     }
 
     public static Jugador nombreJugadorX () {
         System.out.println("Nombre del Jugador X: ");
-        String nombreX = sc.nextLine();
+        String nombreX = Textos.llegirString();
 
         return new Jugador(nombreX,'X');
     }
