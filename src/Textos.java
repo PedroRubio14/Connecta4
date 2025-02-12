@@ -20,7 +20,8 @@ public class Textos {
         GANA,
         COLOCAR_FICHA,
         COLUMNA_NO_VALIDA,
-        CASILLA
+        CASILLA,
+        ESPACIO
     }
 
 
@@ -42,17 +43,31 @@ public class Textos {
                 System.out.print("[ ]");
                 break;
             case GANA:
-                System.out.println("HA GANADO "+j.getNombre()+"!!");
+                if (args.length > 0 && args[0] instanceof Jugador j) {
+                    System.out.println("HA GANADO " + j.getNombre() + "!!");
+                }
                 break;
             case COLOCAR_FICHA:
-                System.out.println("Donde quieres colocar tu ficha "+j.getNombre()+" ?");
+                if (args.length > 0 && args[0] instanceof Jugador j) {
+                    System.out.println("Donde quieres colocar tu ficha " + j.getNombre() + " ?");
+                }
                 break;
             case COLUMNA_NO_VALIDA:
+                if (args.length > 0 && args[0] instanceof Tablero t){
                 System.out.println("Error: La columna no es válida. Elige una entre 0 y " + (t.getTablero()[0].length - 1));
+                }
                 break;
             case CASILLA:
-                System.out.print("[" + t[i][y] + "]");
-
+                if (args.length > 0 && args[0] instanceof Tablero t
+                    && args[1] instanceof Integer && args[2] instanceof Integer) {
+                    int i = (Integer) args[1];
+                    int y = (Integer) args[2];
+                    System.out.print("[" + t.getTablero()[i][y] + "]");
+                }
+                break;
+            case ESPACIO:
+                System.out.println();
+                break;
         }
 
     }

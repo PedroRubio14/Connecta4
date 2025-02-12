@@ -19,8 +19,9 @@ public class Tablero {
         for(int i = 0;i<tablero[0].length;i++){
             System.out.print(" "+i+" ");
         }
-        System.out.println();
-        System.out.println();
+        Textos.imprimir(Textos.Codigo.ESPACIO);
+        Textos.imprimir(Textos.Codigo.ESPACIO);
+
     }
 
     public char[][] getTablero() {
