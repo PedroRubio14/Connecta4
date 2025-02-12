@@ -18,6 +18,10 @@ public class Textos {
                 System.out.print("La partida ha finalizado");
                 break;
 
+            case "empate":
+                System.out.println("EMPATE!!");
+                break;
+
 
         }
 

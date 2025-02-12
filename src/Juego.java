@@ -73,7 +73,7 @@ public class Juego {
                 }
             }
 
-            System.out.println("EMPATE!!");
+            Textos.imprimir("empate");
             return true;
 
         }
