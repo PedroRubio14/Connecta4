@@ -38,7 +38,7 @@ public class Juego {
 
     private boolean ganaX (char [][] t,Jugador j){
         if(filaGanadora(j.getMiFicha(),t) ||columnaGanadora (j.getMiFicha(),t) || ganadorDiagonal(j.getMiFicha(),t) ){
-            Textos.imprimir(Textos.Codigo.GANA);
+            Textos.imprimir(Textos.Codigo.GANA,j);
 
             return true;
         }
@@ -49,7 +49,7 @@ public class Juego {
 
     private boolean ganaO(char [][] t, Jugador j){
         if(filaGanadora(j.getMiFicha(),t) ||columnaGanadora (j.getMiFicha(),t) || ganadorDiagonal(j.getMiFicha(),t) ){
-            Textos.imprimir(Textos.Codigo.GANA);
+            Textos.imprimir(Textos.Codigo.GANA,j);
 
             return true;
         }

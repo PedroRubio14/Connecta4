@@ -11,10 +11,12 @@ public class Tablero {
                 if(tablero[i][y]==0){
                     Textos.imprimir(Textos.Codigo.CASILLA_VACIA);
                 }else {
-                    Textos.imprimir(Textos.Codigo.CASILLA,tablero, i, y);
+                    Integer j = (Integer) i;
+                    Integer x = (Integer) y;
+                    Textos.imprimir(Textos.Codigo.CASILLA,this, j, x);
                 }
             }
-            System.out.println();
+            Textos.imprimir(Textos.Codigo.ESPACIO);
         }
         for(int i = 0;i<tablero[0].length;i++){
             System.out.print(" "+i+" ");

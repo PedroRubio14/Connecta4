@@ -58,11 +58,13 @@ public class Textos {
                 }
                 break;
             case CASILLA:
-                if (args.length > 0 && args[0] instanceof Tablero t
+                if (args.length > 2 && args[0] instanceof Tablero
                     && args[1] instanceof Integer && args[2] instanceof Integer) {
+                    Tablero t = (Tablero) args[0];
+                    char[][] tablero = t.getTablero();
                     int i = (Integer) args[1];
                     int y = (Integer) args[2];
-                    System.out.print("[" + t.getTablero()[i][y] + "]");
+                    System.out.print("[" + tablero[i][y] + "]");
                 }
                 break;
             case ESPACIO:
