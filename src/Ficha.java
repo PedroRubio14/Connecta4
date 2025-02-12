@@ -6,17 +6,17 @@ public class Ficha {
         int columna;
 
         do {
-            Textos.imprimir("colocar-ficha");
+            Textos.imprimir(Textos.Codigo.COLOCAR_FICHA);
             columna = Textos.llegirInt();
             if (columna < 0 || columna >= tablero.getTablero()[0].length){
-                System.out.println("Error: La columna no es válida. Elige una entre 0 y " + (tablero.getTablero()[0].length - 1));
+                Textos.imprimir(Textos.Codigo.COLUMNA_NO_VALIDA,tablero);
 
             }else {
                 Ficha f = new Ficha();
 
                 int fila = encontrarFilaDisponible(columna, tablero);
                 if (fila == -1){
-                    Textos.imprimir("columna-llena");
+                    Textos.imprimir(Textos.Codigo.COLUMNA_LLENA);
                 }
                 else {
                     tablero.getTablero()[fila][columna] = jugador.getMiFicha();

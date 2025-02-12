@@ -9,9 +9,9 @@ public class Tablero {
         for (int i = 0; i < tablero.length; i++) {
             for (int y = 0; y < tablero[i].length; y++) {
                 if(tablero[i][y]==0){
-                    System.out.print("[ ]");
+                    Textos.imprimir(Textos.Codigo.CASILLA_VACIA);
                 }else {
-                    System.out.print("[" + tablero[i][y] + "]");
+                    Textos.imprimir(Textos.Codigo.CASILLA,tablero, i, y);
                 }
             }
             System.out.println();

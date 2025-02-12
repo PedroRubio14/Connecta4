@@ -19,7 +19,7 @@ public class Juego {
             Ficha.colocarFicha(X,tablero);
             tablero.mostrarTablero();
         }
-        Textos.imprimir("partida_finalizada");
+        Textos.imprimir(Textos.Codigo.PARTIDA_FINALIZADA);
 
     }
 
@@ -38,7 +38,7 @@ public class Juego {
 
     private boolean ganaX (char [][] t,Jugador j){
         if(filaGanadora(j.getMiFicha(),t) ||columnaGanadora (j.getMiFicha(),t) || ganadorDiagonal(j.getMiFicha(),t) ){
-            Textos.imprimir("gana");
+            Textos.imprimir(Textos.Codigo.GANA);
 
             return true;
         }
@@ -49,7 +49,7 @@ public class Juego {
 
     private boolean ganaO(char [][] t, Jugador j){
         if(filaGanadora(j.getMiFicha(),t) ||columnaGanadora (j.getMiFicha(),t) || ganadorDiagonal(j.getMiFicha(),t) ){
-            Textos.imprimir("gana");
+            Textos.imprimir(Textos.Codigo.GANA);
 
             return true;
         }
@@ -73,7 +73,7 @@ public class Juego {
                 }
             }
 
-            Textos.imprimir("empate");
+            Textos.imprimir(Textos.Codigo.EMPATE);
             return true;
 
         }

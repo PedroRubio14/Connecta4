@@ -12,35 +12,49 @@ public class Textos {
         return sc.nextLine();
     }
 
-    public static void imprimir (String texto){
-        switch (texto.toLowerCase()){
-            case "partida_finalizada":
+    public enum Codigo {
+        PARTIDA_FINALIZADA,
+        EMPATE,
+        COLUMNA_LLENA,
+        CASILLA_VACIA,
+        GANA,
+        COLOCAR_FICHA,
+        COLUMNA_NO_VALIDA,
+        CASILLA
+    }
+
+
+    public static void imprimir (Codigo codigo, Object...args){
+        switch (codigo){
+            case PARTIDA_FINALIZADA:
                 System.out.print("La partida ha finalizado");
                 break;
 
-            case "empate":
+            case EMPATE:
                 System.out.println("EMPATE!!");
                 break;
 
-            case "columna-llena":
+            case COLUMNA_LLENA:
                 System.out.print("ESTA COLUMNA ESTA LLENA");
                 System.out.println();
                 break;
-
-
-        }
-
-    }
-
-    public static void imprimir (String texto, Jugador j){
-        switch (texto.toLowerCase()){
-            case "gana":
+            case CASILLA_VACIA:
+                System.out.print("[ ]");
+                break;
+            case GANA:
                 System.out.println("HA GANADO "+j.getNombre()+"!!");
                 break;
-            case "colocar-ficha":
+            case COLOCAR_FICHA:
                 System.out.println("Donde quieres colocar tu ficha "+j.getNombre()+" ?");
+                break;
+            case COLUMNA_NO_VALIDA:
+                System.out.println("Error: La columna no es válida. Elige una entre 0 y " + (t.getTablero()[0].length - 1));
+                break;
+            case CASILLA:
+                System.out.print("[" + t[i][y] + "]");
 
         }
+
     }
 
 }
