@@ -22,6 +22,11 @@ public class Textos {
                 System.out.println("EMPATE!!");
                 break;
 
+            case "columna-llena":
+                System.out.print("ESTA COLUMNA ESTA LLENA");
+                System.out.println();
+                break;
+
 
         }
 
@@ -32,6 +37,9 @@ public class Textos {
             case "gana":
                 System.out.println("HA GANADO "+j.getNombre()+"!!");
                 break;
+            case "colocar-ficha":
+                System.out.println("Donde quieres colocar tu ficha "+j.getNombre()+" ?");
+
         }
     }
 

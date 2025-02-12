@@ -6,7 +6,7 @@ public class Ficha {
         int columna;
 
         do {
-            System.out.println("Donde quieres colocar tu ficha "+jugador.getNombre()+" ?");
+            Textos.imprimir("colocar-ficha");
             columna = Textos.llegirInt();
             if (columna < 0 || columna >= tablero.getTablero()[0].length){
                 System.out.println("Error: La columna no es válida. Elige una entre 0 y " + (tablero.getTablero()[0].length - 1));
@@ -16,8 +16,7 @@ public class Ficha {
 
                 int fila = encontrarFilaDisponible(columna, tablero);
                 if (fila == -1){
-                    System.out.print("ESTA COLUMNA ESTA LLENA");
-                    System.out.println();
+                    Textos.imprimir("columna-llena");
                 }
                 else {
                     tablero.getTablero()[fila][columna] = jugador.getMiFicha();
