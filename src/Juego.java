@@ -2,9 +2,13 @@ public class Juego {
 
     public void partida(Tablero tablero){
         Juego j = new Juego();
-        Jugador O = Jugador.nombreJugadorO();
-        Jugador X = Jugador.nombreJugadorX();
+        Jugador O = new Jugador("",'O');
+        Jugador X = new Jugador("",'X');
 
+
+
+        Jugador.nombreJugadores(O);
+        Jugador.nombreJugadores(X);
 
         tablero.mostrarTablero();
 

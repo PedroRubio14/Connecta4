@@ -21,7 +21,8 @@ public class Textos {
         COLOCAR_FICHA,
         COLUMNA_NO_VALIDA,
         CASILLA,
-        ESPACIO
+        ESPACIO,
+        NOMBRE
     }
 
 
@@ -67,6 +68,11 @@ public class Textos {
                     System.out.print("[" + tablero[i][y] + "]");
                 }
                 break;
+
+            case NOMBRE:
+                if (args.length > 0 && args[0] instanceof Jugador j){
+                    System.out.println("Nombre del jugador"+j.getMiFicha()+"?");
+                }
             case ESPACIO:
                 System.out.println();
                 break;

@@ -3,18 +3,13 @@ public class Jugador {
     private final char miFicha;
 
 
-    public static Jugador nombreJugadorO(){
-        System.out.println("Nombre del Jugador O: ");
-        String nombreO = Textos.llegirString();
 
-        return new Jugador(nombreO,'O');
-    }
 
-    public static Jugador nombreJugadorX () {
-        System.out.println("Nombre del Jugador X: ");
-        String nombreX = Textos.llegirString();
 
-        return new Jugador(nombreX,'X');
+    public static void nombreJugadores(Jugador j){
+        Textos.imprimir(Textos.Codigo.NOMBRE,j);
+        j.setNombre(Textos.llegirString());
+
     }
 
 
@@ -25,14 +20,17 @@ public class Jugador {
     }
 
     public String getNombre() {
+
         return nombre;
     }
 
     public void setNombre(String nombre) {
+
         this.nombre = nombre;
     }
 
     public char getMiFicha() {
+
         return miFicha;
     }
 }
