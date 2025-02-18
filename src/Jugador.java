@@ -1,8 +1,6 @@
 public class Jugador {
     private String nombre;
-    private final char miFicha;
-
-
+    public char miFicha;
 
 
 
@@ -13,24 +11,23 @@ public class Jugador {
     }
 
 
-
-    public Jugador(String nombre,char miFicha) {
+    public Jugador(String nombre) {
         this.nombre = nombre;
-        this.miFicha = miFicha;
     }
 
     public String getNombre() {
-
         return nombre;
     }
 
     public void setNombre(String nombre) {
-
         this.nombre = nombre;
     }
 
     public char getMiFicha() {
-
         return miFicha;
+    }
+
+    public void setMiFicha(char miFicha) {
+        this.miFicha = miFicha;
     }
 }

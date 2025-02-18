@@ -2,26 +2,26 @@ public class Juego {
 
     public void partida(Tablero tablero){
         Juego j = new Juego();
-        Jugador O = new Jugador("",'O');
-        Jugador X = new Jugador("",'X');
+        Jugador O = new Jugador("");
+        Jugador X = new Jugador("");
 
 
 
         Jugador.nombreJugadores(O);
         Jugador.nombreJugadores(X);
 
-        tablero.mostrarTablero();
+        Textos.mostrarTablero(tablero);
 
         while (!laPartidaHaTerminado(tablero,O,X)){
             Ficha.colocarFicha(O,tablero);
-            tablero.mostrarTablero();
+            Textos.mostrarTablero(tablero);
 
             if (laPartidaHaTerminado(tablero,O,X)){
                 break;
             }
 
             Ficha.colocarFicha(X,tablero);
-            tablero.mostrarTablero();
+            Textos.mostrarTablero(tablero);
         }
         Textos.imprimir(Textos.Codigo.PARTIDA_FINALIZADA);
 

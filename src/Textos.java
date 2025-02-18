@@ -25,6 +25,27 @@ public class Textos {
         NOMBRE
     }
 
+    public static void mostrarTablero(Tablero t){
+        char [][] tablero = t.getTablero();
+        for (int i = 0; i < tablero.length; i++) {
+            for (int y = 0; y < tablero[i].length; y++) {
+                if(tablero[i][y]==0){
+                    Textos.imprimir(Textos.Codigo.CASILLA_VACIA);
+                }else {
+                    Integer j = (Integer) i;
+                    Integer x = (Integer) y;
+                    Textos.imprimir(Textos.Codigo.CASILLA,t, j, x);
+                }
+            }
+            Textos.imprimir(Textos.Codigo.ESPACIO);
+        }
+        for(int i = 0;i<tablero[0].length;i++){
+            System.out.print(" "+i+" ");
+        }
+        Textos.imprimir(Textos.Codigo.ESPACIO);
+        Textos.imprimir(Textos.Codigo.ESPACIO);
+    }
+
 
     public static void imprimir (Codigo codigo, Object...args){
         switch (codigo){
