@@ -32,13 +32,13 @@ public class Tablero {
 
 
 
-    public boolean checkWin(Jugador jug) {
+    public boolean HayGanador(Jugador jug) {
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
-                if (checkDirection(i, j, 1, 0, jug.getMiFicha()) || // Horizontal
-                        checkDirection(i, j, 0, 1, jug.getMiFicha()) || // Vertical
-                        checkDirection(i, j, 1, 1, jug.getMiFicha()) || // Diagonal ↘
-                        checkDirection(i, j, 1, -1, jug.getMiFicha())) { // Diagonal ↙
+                if (verificaDirecciones(i, j, 1, 0, jug.getMiFicha()) || // Horizontal
+                        verificaDirecciones(i, j, 0, 1, jug.getMiFicha()) || // Vertical
+                        verificaDirecciones(i, j, 1, 1, jug.getMiFicha()) || // Diagonal ↘
+                        verificaDirecciones(i, j, 1, -1, jug.getMiFicha())) { // Diagonal ↙
                     return true;
                 }
             }
@@ -46,7 +46,7 @@ public class Tablero {
         return false;
     }
 
-    private boolean checkDirection(int row, int col, int dRow, int dCol, char ficha) {
+    private boolean verificaDirecciones(int row, int col, int dRow, int dCol, char ficha) {
         int count = 0;
         for (int i = 0; i < 4; i++) {
             int r = row + i * dRow;
@@ -75,7 +75,7 @@ public class Tablero {
 
 
     private boolean ganaX (Jugador j){
-        if( checkWin(j)){
+        if( HayGanador(j)){
             Textos.imprimir(Textos.Codigo.GANA,j);
 
             return true;
@@ -86,7 +86,7 @@ public class Tablero {
 
 
     private boolean ganaO(Jugador j){
-        if(checkWin(j)){
+        if(HayGanador(j)){
             Textos.imprimir(Textos.Codigo.GANA,j);
 
             return true;
