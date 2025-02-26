@@ -92,7 +92,7 @@ public class Textos {
 
             case NOMBRE:
                 if (args.length > 0 && args[0] instanceof Jugador j){
-                    System.out.println("Nombre del jugador"+j.getMiFicha()+"?");
+                    System.out.println("Nombre del jugador "+j.getMiFicha()+"?");
                 }
             case ESPACIO:
                 System.out.println();

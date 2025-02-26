@@ -2,8 +2,8 @@ public class Juego {
 
     public void partida(Tablero tablero){
         Juego j = new Juego();
-        Jugador O = new Jugador("");
-        Jugador X = new Jugador("");
+        Jugador O = new Jugador("",'O');
+        Jugador X = new Jugador("",'X');
 
 
 

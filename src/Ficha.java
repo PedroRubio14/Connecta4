@@ -14,7 +14,7 @@ public class Ficha {
             }else {
                 Ficha f = new Ficha();
 
-                int fila = encontrarFilaDisponible(columna, tablero);
+                int fila = tablero.encontrarFilaDisponible(columna, tablero);
                 if (fila == -1){
                     Textos.imprimir(Textos.Codigo.COLUMNA_LLENA);
                 }
@@ -33,15 +33,7 @@ public class Ficha {
 
     }
 
-    private static int encontrarFilaDisponible(int columna, Tablero tablero){
-        for(int i = tablero.getTablero().length-1;i>=0;i--){
-            if(tablero.getTablero()[i][columna]==0){
-                return i;
-            }
 
-        }
-        return -1;
-    }
 
 
 }
